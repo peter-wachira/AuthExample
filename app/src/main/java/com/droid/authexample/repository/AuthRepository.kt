@@ -11,4 +11,4 @@ class AuthRepository(
     ) = safeApiCall {
         api.login(email,password)
     }
-}
+ }
