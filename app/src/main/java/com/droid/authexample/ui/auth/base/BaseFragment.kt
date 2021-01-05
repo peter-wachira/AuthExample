@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
+import com.droid.authexample.data.UserPreferences
 import com.droid.authexample.data.network.RemoteDataSource
 import com.droid.authexample.data.repository.BaseRepository
 
@@ -15,6 +16,7 @@ abstract class BaseFragment<VM: ViewModel, B: ViewBinding,R: BaseRepository> : F
     protected  lateinit var  binding: B
     protected val remoteDataSource = RemoteDataSource()
     protected  lateinit var  viewModel: VM
+    protected  lateinit var userPreferences: UserPreferences
 
 
     override fun onCreateView(
@@ -22,6 +24,7 @@ abstract class BaseFragment<VM: ViewModel, B: ViewBinding,R: BaseRepository> : F
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        userPreferences = UserPreferences(requireContext())
         binding = getFragmentBinding(inflater,container)
         val factory = ViewModelFactory(geFragmentrepository())
         viewModel = ViewModelProvider(this,factory).get(getViewModel())
