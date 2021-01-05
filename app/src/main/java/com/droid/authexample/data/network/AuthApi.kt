@@ -1,6 +1,6 @@
-package com.droid.authexample.network
+package com.droid.authexample.data.network
 
-import com.droid.authexample.responses.LoginResponse
+import com.droid.authexample.data.responses.LoginResponse
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST

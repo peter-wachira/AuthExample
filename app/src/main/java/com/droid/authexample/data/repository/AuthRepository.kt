@@ -1,6 +1,6 @@
-package com.droid.authexample.repository
+package com.droid.authexample.data.repository
 
-import com.droid.authexample.network.AuthApi
+import com.droid.authexample.data.network.AuthApi
 
 class AuthRepository(
     private val api: AuthApi

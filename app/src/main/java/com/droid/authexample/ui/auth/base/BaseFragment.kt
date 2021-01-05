@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
-import com.droid.authexample.network.RemoteDataSource
-import com.droid.authexample.repository.BaseRepository
+import com.droid.authexample.data.network.RemoteDataSource
+import com.droid.authexample.data.repository.BaseRepository
 
 abstract class BaseFragment<VM: ViewModel, B: ViewBinding,R: BaseRepository> : Fragment(){
     protected  lateinit var  binding: B

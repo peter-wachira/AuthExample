@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.droid.authexample.network.Resource
-import com.droid.authexample.repository.AuthRepository
-import com.droid.authexample.responses.LoginResponse
+import com.droid.authexample.data.network.Resource
+import com.droid.authexample.data.repository.AuthRepository
+import com.droid.authexample.data.responses.LoginResponse
 import kotlinx.coroutines.launch
 
 class AuthViewModel(

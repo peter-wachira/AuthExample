@@ -1,4 +1,4 @@
-package com.droid.authexample.responses
+package com.droid.authexample.data.responses
 
 data class User(
         val access_token: String?,

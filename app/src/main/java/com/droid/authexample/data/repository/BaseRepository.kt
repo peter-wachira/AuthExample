@@ -1,6 +1,6 @@
-package com.droid.authexample.repository
+package com.droid.authexample.data.repository
 
-import com.droid.authexample.network.Resource
+import com.droid.authexample.data.network.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException

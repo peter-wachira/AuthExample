@@ -2,8 +2,8 @@ package com.droid.authexample.ui.auth.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.droid.authexample.repository.AuthRepository
-import com.droid.authexample.repository.BaseRepository
+import com.droid.authexample.data.repository.AuthRepository
+import com.droid.authexample.data.repository.BaseRepository
 import com.droid.authexample.ui.auth.AuthViewModel
 import java.lang.IllegalArgumentException
 

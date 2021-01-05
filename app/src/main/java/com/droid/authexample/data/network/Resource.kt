@@ -1,4 +1,4 @@
-package com.droid.authexample.network
+package com.droid.authexample.data.network
 
 import okhttp3.ResponseBody
 
