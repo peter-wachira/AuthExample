@@ -37,7 +37,6 @@ class LoginFragment : BaseFragment<AuthViewModel,FragmentLoginBinding,AuthReposi
         binding.buttonLogin.setOnClickListener {
             val email = binding.editTextTextEmailAddress.text.toString().trim()
             val password = binding.editTextTextPassword.text.toString().trim()
-
             //@todo add validations
             viewModel.login(email, password)
 
