@@ -4,24 +4,28 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import com.droid.authexample.databinding.FragmentLoginBinding
 import com.droid.authexample.data.network.AuthApi
 import com.droid.authexample.data.network.Resource
 import com.droid.authexample.data.repository.AuthRepository
 import com.droid.authexample.ui.auth.base.BaseFragment
+import kotlinx.coroutines.launch
 
 
 class LoginFragment : BaseFragment<AuthViewModel,FragmentLoginBinding,AuthRepository>() {
     override fun getViewModel() = AuthViewModel::class.java
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+         super.onActivityCreated(savedInstanceState)
 
         viewModel.loginResponse.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
             when(it){
 
                 is Resource.Success->{
-                    Toast.makeText(requireContext(), it.toString(),Toast.LENGTH_LONG).show()
+                    lifecycleScope.launch {
+                        userPreferences.saveAuthToken(it.value.user.access_token!!)
+                    }
                 }
                 is Resource.Failure ->{
                     Toast.makeText(requireContext(), "Login Failure",Toast.LENGTH_LONG).show()
@@ -38,7 +42,6 @@ class LoginFragment : BaseFragment<AuthViewModel,FragmentLoginBinding,AuthReposi
 
         }
 
-
     }
 
     override fun getFragmentBinding(
@@ -47,8 +50,6 @@ class LoginFragment : BaseFragment<AuthViewModel,FragmentLoginBinding,AuthReposi
     ) = FragmentLoginBinding.inflate(inflater,container,false)
 
     override fun geFragmentrepository() = AuthRepository(remoteDataSource.buildApi(AuthApi::class.java))
-
-
 
 }
 
