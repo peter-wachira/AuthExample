@@ -1,8 +1,6 @@
 package com.droid.authexample.ui.auth
-
 import android.app.Activity
 import android.content.Intent
-import android.sax.StartElementListener
 import android.view.View
 
 fun<A: Activity> Activity.startNewActivity(activity: Class<A>){
@@ -18,4 +16,5 @@ fun View.visible(isVisible: Boolean){
 
 fun View.enable(enabled: Boolean){
     isEnabled = enabled
+    alpha = if (enabled) 1f else 0.5f
 }
