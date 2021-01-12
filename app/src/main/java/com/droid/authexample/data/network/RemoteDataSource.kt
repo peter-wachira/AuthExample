@@ -34,5 +34,4 @@ class RemoteDataSource {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(api)}
-
 }
