@@ -1,4 +1,4 @@
-package com.droid.authexample.ui.auth
+package com.droid.authexample.ui.auth.auth
 
 import android.os.Bundle
 import android.view.LayoutInflater
