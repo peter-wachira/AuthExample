@@ -31,4 +31,10 @@ class UserPreferences(
     companion object{
         private val KEY_AUTH = preferencesKey<String>("key_auth")
     }
+
+    suspend fun clearItems(){
+        dataStore.edit { preferences ->
+            preferences.clear()
+        }
+    }
 }
