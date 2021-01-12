@@ -12,7 +12,6 @@ import androidx.viewbinding.ViewBinding
 import com.droid.authexample.data.UserPreferences
 import com.droid.authexample.data.network.RemoteDataSource
 import com.droid.authexample.data.repository.BaseRepository
-import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 

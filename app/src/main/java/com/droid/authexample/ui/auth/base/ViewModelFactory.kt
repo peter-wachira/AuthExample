@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.droid.authexample.data.repository.AuthRepository
 import com.droid.authexample.data.repository.BaseRepository
 import com.droid.authexample.data.repository.UserRepository
-import com.droid.authexample.ui.auth.AuthViewModel
+import com.droid.authexample.ui.auth.auth.AuthViewModel
 import com.droid.authexample.ui.auth.home.HomeViewModel
 import java.lang.IllegalArgumentException
 
