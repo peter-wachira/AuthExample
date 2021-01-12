@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.droid.authexample.ui.auth.LoginFragment"
+        android:name="com.droid.authexample.ui.auth.auth.LoginFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
 
     <fragment
         android:id="@+id/registrationFragment"
-        android:name="com.droid.authexample.ui.auth.RegisterFragment"
+        android:name="com.droid.authexample.ui.auth.auth.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
 </navigation>

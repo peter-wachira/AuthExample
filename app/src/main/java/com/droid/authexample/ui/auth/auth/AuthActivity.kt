@@ -1,4 +1,4 @@
-package com.droid.authexample.ui.auth
+package com.droid.authexample.ui.auth.auth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

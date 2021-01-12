@@ -16,7 +16,7 @@ class RemoteDataSource {
         authToken: String? = null
     ): Api {
         return Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl (BASE_URL)
             .client(
                 OkHttpClient.Builder()
                     .addInterceptor { chain ->
@@ -34,5 +34,4 @@ class RemoteDataSource {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(api)}
-
 }
