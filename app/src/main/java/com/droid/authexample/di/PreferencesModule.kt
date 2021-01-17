@@ -1,6 +1,8 @@
 package com.droid.authexample.di
 
 import android.content.Context
+import android.content.SharedPreferences
+import android.preference.PreferenceManager
 import com.droid.authexample.data.UserPreferences
 import dagger.Module
 import dagger.Provides
@@ -16,4 +18,8 @@ object PreferencesModule {
     @Provides
     fun provideUserPreferences(@ApplicationContext context:Context):UserPreferences =
         UserPreferences(context)
+    @Singleton
+    @Provides
+    fun provideSharedPreferences(@ApplicationContext context: Context): SharedPreferences =
+        PreferenceManager.getDefaultSharedPreferences(context)
 }

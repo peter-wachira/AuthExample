@@ -19,6 +19,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import timber.log.Timber
 import java.util.concurrent.TimeUnit
 import javax.inject.Named
 import javax.inject.Singleton
@@ -67,14 +68,14 @@ object NetworkModule {
     @Provides
     @Named("auth")
     fun getAuthToken(@ApplicationContext context: Context):String {
-        val userPreferences = UserPreferences(context)
-        var authToken = ""
-        //Use
+        val sharedPref = context.getSharedPreferences("AuthToken",Context.MODE_PRIVATE)
+        var authToken = sharedPref.getString("token","")
+        Timber.e("User Auth Token ${authToken}")
         /*runBlocking {
             userPreferences.authToken.collect {
                 authToken = it!!
             }
         }*/
-        return authToken
+        return authToken!!
     }
 }

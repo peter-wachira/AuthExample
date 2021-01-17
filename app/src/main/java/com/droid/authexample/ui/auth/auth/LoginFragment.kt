@@ -1,5 +1,7 @@
 package com.droid.authexample.ui.auth.auth
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -18,28 +20,32 @@ import com.droid.authexample.ui.auth.startNewActivity
 import com.droid.authexample.ui.auth.visible
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_login.view.*
+import timber.log.Timber
+import javax.inject.Inject
 
 @AndroidEntryPoint
-class LoginFragment : BaseFragment<FragmentLoginBinding,AuthRepository>() {
+class LoginFragment : BaseFragment<FragmentLoginBinding, AuthRepository>() {
 
     private val viewModel by viewModels<AuthViewModel>()
-
+    @Inject
+    lateinit var sharedPreferences: SharedPreferences
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-         super.onActivityCreated(savedInstanceState)
+        super.onActivityCreated(savedInstanceState)
 
         binding.progressbar.visible(false)
         binding.buttonLogin.enable(false)
         viewModel.loginResponse.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
             binding.progressbar.visible(false)
-            when(it){
+            when (it) {
 
-                is Resource.Success->{
-
-                        viewModel.saveAuthToken(it.value.user.access_token!!)
-                     requireActivity().startNewActivity(HomeActivity::class.java)
+                is Resource.Success -> {
+                    Timber.e("User Auth Token ${it.value.user.access_token}")
+                    sharedPreferences.edit().putString("token", it.value.user.access_token).apply()
+                    viewModel.saveAuthToken(it.value.user.access_token!!)
+                    requireActivity().startNewActivity(HomeActivity::class.java)
 
                 }
-                is Resource.Failure -> handleApiError(it){ login()}
+                is Resource.Failure -> handleApiError(it) { login() }
             }
 
         })
@@ -57,7 +63,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding,AuthRepository>() {
 
     }
 
-    private  fun login(){
+    private fun login() {
         val email = binding.editTextTextEmailAddress.text.toString().trim()
         val password = binding.editTextTextPassword.text.toString().trim()
         binding.progressbar.visible(true)
@@ -67,7 +73,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding,AuthRepository>() {
     override fun getFragmentBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
-    ) = FragmentLoginBinding.inflate(inflater,container,false)
+    ) = FragmentLoginBinding.inflate(inflater, container, false)
 
 
 }
