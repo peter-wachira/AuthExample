@@ -3,6 +3,7 @@ package com.droid.authexample.ui.auth.auth
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import com.droid.authexample.utils.launchFragmentInHiltContainer
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import junit.framework.TestCase
@@ -25,7 +26,7 @@ class LoginFragmentTest : TestCase() {
 
     @Test
     fun loginFragment(){
-        val scenario = launchFragmentInContainer<LoginFragment>()
+        val scenario = launchFragmentInHiltContainer<LoginFragment>()
     }
 
     @Test
