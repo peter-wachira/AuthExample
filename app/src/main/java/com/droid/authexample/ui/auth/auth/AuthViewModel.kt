@@ -1,5 +1,6 @@
 package com.droid.authexample.ui.auth.auth
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -7,12 +8,12 @@ import androidx.lifecycle.viewModelScope
 import com.droid.authexample.data.network.Resource
 import com.droid.authexample.data.repository.AuthRepository
 import com.droid.authexample.data.responses.LoginResponse
-import com.droid.authexample.ui.auth.base.BaseViewModel
 import kotlinx.coroutines.launch
 
-class AuthViewModel(
+
+class AuthViewModel @ViewModelInject constructor(
     private val repository : AuthRepository
-) : BaseViewModel(repository){
+) : ViewModel(){
 
     private  val _loginResponse: MutableLiveData<Resource<LoginResponse>> = MutableLiveData()
     val loginResponse: LiveData<Resource<LoginResponse>>

@@ -1,8 +1,10 @@
 package com.droid.authexample.data.repository
 import com.droid.authexample.data.UserPreferences
 import com.droid.authexample.data.network.AuthApi
+import javax.inject.Inject
 
-class AuthRepository(
+
+class AuthRepository @Inject constructor(
     private val api: AuthApi,
     private val preferences: UserPreferences
 ) : BaseRepository(){

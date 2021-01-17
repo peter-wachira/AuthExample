@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "1034438772688",
+    "firebase_url": "https://percovaconsulting.firebaseio.com",
+    "project_id": "percovaconsulting",
+    "storage_bucket": "percovaconsulting.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034438772688:android:d4129d817b7a6f3d15dbd5",
+        "android_client_info": {
+          "package_name": "com.droid.authexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1034438772688-o796k72hklqlf8l17ufeg96ii97cqu1a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrHjaRTnhQ14b7REiyKsYPzbTp-wrmsNc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1034438772688-o796k72hklqlf8l17ufeg96ii97cqu1a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034438772688:android:914907014f1fcee015dbd5",
+        "android_client_info": {
+          "package_name": "sammy.mutahi.pacovaconsulting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1034438772688-o796k72hklqlf8l17ufeg96ii97cqu1a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrHjaRTnhQ14b7REiyKsYPzbTp-wrmsNc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1034438772688-o796k72hklqlf8l17ufeg96ii97cqu1a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034438772688:android:e11e73bdb8c4150f15dbd5",
+        "android_client_info": {
+          "package_name": "sammy.mutahi.xoko_sample100"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1034438772688-o796k72hklqlf8l17ufeg96ii97cqu1a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrHjaRTnhQ14b7REiyKsYPzbTp-wrmsNc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1034438772688-o796k72hklqlf8l17ufeg96ii97cqu1a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

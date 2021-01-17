@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.viewModels
 import com.droid.authexample.databinding.FragmentLoginBinding
 import com.droid.authexample.data.network.AuthApi
 import com.droid.authexample.data.network.Resource
@@ -15,12 +16,14 @@ import com.droid.authexample.ui.auth.handleApiError
 import com.droid.authexample.ui.auth.home.HomeActivity
 import com.droid.authexample.ui.auth.startNewActivity
 import com.droid.authexample.ui.auth.visible
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_login.view.*
 
+@AndroidEntryPoint
+class LoginFragment : BaseFragment<FragmentLoginBinding,AuthRepository>() {
 
-class LoginFragment : BaseFragment<AuthViewModel,FragmentLoginBinding,AuthRepository>() {
+    private val viewModel by viewModels<AuthViewModel>()
 
-    override fun getViewModel() = AuthViewModel::class.java
     override fun onActivityCreated(savedInstanceState: Bundle?) {
          super.onActivityCreated(savedInstanceState)
 
@@ -66,7 +69,6 @@ class LoginFragment : BaseFragment<AuthViewModel,FragmentLoginBinding,AuthReposi
         container: ViewGroup?
     ) = FragmentLoginBinding.inflate(inflater,container,false)
 
-    override fun geFragmentrepository() = AuthRepository(remoteDataSource.buildApi(AuthApi::class.java), userPreferences)
 
 }
 

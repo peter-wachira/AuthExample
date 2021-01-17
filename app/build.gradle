@@ -3,6 +3,9 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs"
+apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
 
 android {
     compileSdkVersion 30
@@ -14,6 +17,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -54,9 +58,23 @@ dependencies {
     //Retrofit and GSON
     implementation 'com.squareup.retrofit2:retrofit:2.7.2'
     implementation 'com.squareup.retrofit2:converter-gson:2.7.2'
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
 
     //Kotlin Coroutines
+    implementation "com.google.dagger:hilt-android:2.28-alpha"
+    kapt "com.google.dagger:hilt-android-compiler:2.28-alpha"
 
+    //Hilt
+    implementation "com.google.dagger:hilt-android:2.28-alpha"
+    kapt "com.google.dagger:hilt-android-compiler:2.28-alpha"
+    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01'
+    // When using Kotlin.
+    kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha01'
+
+    //fragment ktx
+    implementation "androidx.fragment:fragment-ktx:1.2.5"
+    //activity-ktx
+    implementation "androidx.activity:activity-ktx:1.1.0"
 
 
 
@@ -76,4 +94,19 @@ dependencies {
 
 //    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.0-alpha07"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+
+    /*
+
+    * Debug and Firebase Analytics,Crashlytics
+
+    */
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+    implementation platform('com.google.firebase:firebase-bom:26.3.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-crashlytics'
+
+    //multidex
+    def multidex_version = "2.0.1"
+    implementation "androidx.multidex:multidex:$multidex_version"
+
 }
