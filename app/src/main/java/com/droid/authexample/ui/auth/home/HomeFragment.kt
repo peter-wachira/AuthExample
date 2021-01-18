@@ -45,6 +45,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding,UserRepository>() {
         binding.buttonLogout.setOnClickListener {
             runBlocking {
                 viewModel.logout()
+
             }
         }
     }

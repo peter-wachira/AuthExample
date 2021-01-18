@@ -27,6 +27,7 @@ class LoginFragmentTest : TestCase() {
     @Test
     fun loginFragment(){
         val scenario = launchFragmentInHiltContainer<LoginFragment>()
+
     }
 
     @Test
